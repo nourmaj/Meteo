@@ -1,0 +1,47 @@
+
+<div class="jumbotron">
+  <h1 class="display-3" class="text-center primary">Bienvenue sur mon webapp météo</h1>
+  <hr class="my-4">
+  <form>
+    <fieldset>
+     
+      <div class="form-group">
+        <legend>Ville :</legend>  
+              <input type="text" class="form-control" name="ville" [(ngModel)]="ville" aria-describedby="emailHelp" placeholder="entrer la ville">
+      </div>
+  
+    <a class="btn btn-primary btn-lg" (click)="WeatherVille(ville)" role="button">Rechercher</a>
+    </fieldset>
+    </form>
+    <br>
+    <br>
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>icon</th>
+            <th>Nom de la ville</th>
+            <th>Température</th>
+            <th>Température minimal</th>
+            <th>Température maximal</th>
+            <th>Humidité</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td *ngFor="let ico of listicon" > 
+              <img src="{{icon}}{{ico.icon}}.png">
+            </td>
+            <td>{{Nameville.city.name}}</td>
+            <td>{{weatherFinal.main.temp}}</td>
+            <td>{{weatherFinal.main.temp_min}}</td>
+            <td>{{weatherFinal.main.temp_max}}</td>
+            <td>{{weatherFinal.main.humidity}}</td>
+            
+        
+          </tr>
+          </tbody>
+          </table>
+          
+          {{icon.icon}}
+          
+</div>
